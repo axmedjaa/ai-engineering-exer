@@ -17,6 +17,6 @@ npm-debug.log*
 .DS_Store
 Thumbs.db
 
-# Optional: build/output folders
-dist/
-build/
+# # Optional: build/output folders
+# dist/
+# build/
