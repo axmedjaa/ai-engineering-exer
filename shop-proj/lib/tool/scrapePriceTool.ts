@@ -1,7 +1,5 @@
 import { createTool } from "@inngest/agent-kit";
 import { z } from "zod";
-
-// Tool to scrape prices using Serper Shopping API for each link
 export const scrapePriceTool = createTool({
   name: "scrape_product_prices_webpage",
   description: "Use Serper Shopping API to extract price from every product link (first shopping result).",
@@ -32,13 +30,13 @@ export const scrapePriceTool = createTool({
             "Content-Type": "application/json",
           },
           body: JSON.stringify({
-            q: product, // use product link or name as query
+            q: product, 
             num: 1,
           }),
         });
 
         const data = await res.json();
-        const first = data?.shopping?.[0]; // FIRST INDEX
+        const first = data?.shopping?.[0]; 
 
         if (!first) {
           prices.push({
